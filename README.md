@@ -1,6 +1,6 @@
 # 23Fall_CSFoundation
 
-## Team Members:
+## Team Members
 
 [Haelee Kim]
 [Jiwoo Suh]
