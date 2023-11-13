@@ -2,7 +2,7 @@
 
 ## Team Members:
 
-Haelee Kim
+[Haelee Kim]
 [Jiwoo Suh]
 [Kyuri Kim]
 [Nayaeun Kwon]
