@@ -62,14 +62,34 @@ class Tamagotchi:
             print(f"{self.name} is no longer alive. It can't go to school.")
 
     def go_on_date(self):
-        if self.is_alive:
-            print(f"{self.name} is going on a date with their partner.")
-            self.hunger += 7
-            self.energy -= 20
-            self.happiness += 20
-            self._update_status()
-        else:
-            print(f"{self.name} is no longer alive. You can't go on a date with it.")
+            if self.is_alive:
+                print(f"{self.name} is going on a date with their partner.")
+
+                # Randomly choose a date activity
+                date_activity = random.choice(["movie", "restaurant", "park"])
+                
+                # Adjust hunger, energy, and happiness based on the chosen activity
+                if date_activity == "movie":
+                    self.hunger += 5
+                    self.energy -= 15
+                    self.happiness += 25
+                elif date_activity == "restaurant":
+                    self.hunger -= 10
+                    self.energy -= 10
+                    self.happiness += 30
+                elif date_activity == "park":
+                    self.hunger += 3
+                    self.energy -= 5
+                    self.happiness += 20
+
+                # Add a chance for a surprise event during the date
+                if random.random() < 0.2:  # 20% chance for a surprise event
+                    print("Surprise event! Your date found a hidden treasure.")
+                    self.happiness += 50
+
+                self._update_status()
+            else:
+                print(f"{self.name} is no longer alive. You can't go on a date with it.")
 
     def sleep(self):
         if self.is_alive:
