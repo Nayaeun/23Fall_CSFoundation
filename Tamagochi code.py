@@ -1,5 +1,6 @@
 # %%
 import time
+import random 
 
 class Tamagotchi:
     def __init__(self, name):
@@ -60,7 +61,49 @@ class Tamagotchi:
             self._update_status()
         else:
             print(f"{self.name} is no longer alive. It can't go to school.")
+            
+    def go_to_cafe(self):
+        if self.is_alive:
+            print(f"{self.name} is going to the cafe.")
+            self.hunger -= 8
+            self.energy += 10
+            self.happiness += 15
+            self._update_status()
+        else:
+            print(f"{self.name} is no longer alive. You can't go to the cafe with it.")
 
+    def have_beer(self):
+        if self.is_alive:
+            print(f"{self.name} is having beer.")
+
+            # Adjust hunger, energy, and happiness based on having beer
+            self.hunger -= 8
+            self.energy -= 5
+            self.happiness += 15
+
+            self._update_status()
+        else:
+            print(f"{self.name} is no longer alive. It can't have beer.")
+            
+    def go_to_shopping(self):
+        if self.is_alive:
+            print(f"{self.name} is going shopping.")
+            self.hunger += 3
+            self.energy -= 5
+            self.happiness += 10
+            self._update_status()
+        else:
+            print(f"{self.name} is no longer alive. You can't go shopping with it.")
+    
+    def watch_netflix_at_night(self):
+        if self.is_alive:
+            print(f"{self.name} is watching Netflix at night.")
+            self.energy -= 10
+            self.happiness += 15
+            self._update_status()
+        else:
+            print(f"{self.name} is no longer alive. It can't watch Netflix.")
+        
     def go_on_date(self):
             if self.is_alive:
                 print(f"{self.name} is going on a date with their partner.")
@@ -90,6 +133,23 @@ class Tamagotchi:
                 self._update_status()
             else:
                 print(f"{self.name} is no longer alive. You can't go on a date with it.")
+    
+    def talk_to_friends(self):
+        if self.is_alive:
+            print(f"{self.name} is talking to friends.")
+            self.happiness += 10
+            self._update_status()
+        else:
+            print(f"{self.name} is no longer alive. It can't talk to friends.")
+    
+    def walk_with_dogs(self):
+        if self.is_alive:
+            print(f"{self.name} is walking with dogs.")
+            self.happiness += 20
+            self.energy -= 10
+            self._update_status()
+        else:
+            print(f"{self.name} is no longer alive. It can't walk with dogs.")
 
     def sleep(self):
         if self.is_alive:
@@ -143,7 +203,8 @@ if __name__ == "__main__":
     tamagotchi = Tamagotchi(pet_name)
 
     while tamagotchi.is_alive:
-        action = input("What do you want to do? (feed/play/play_at_playground/play_soccer/go_to_school/go_on_date/sleep/get_married/raise_kids/quit): ").lower()
+        
+        action = input("What do you want to do? (feed/play/play_at_playground/play_soccer/go_to_school/go_to_cafe/have_beer/watch_netflix_at_night/go_to_shopping/go_on_date/talk_to_friends/walk_with_dogs/sleep/get_married/raise_kids/quit): ").lower()
 
         if action == "feed":
             tamagotchi.feed()
@@ -155,8 +216,20 @@ if __name__ == "__main__":
             tamagotchi.play_soccer()
         elif action == "go_to_school":
             tamagotchi.go_to_school()
+        elif action == "go_to_cafe":
+            tamagotchi.go_to_cafe()
+        elif action == "have_beer":  
+            tamagotchi.have_beer()
+        elif action == "watch_netflix_at_night":
+            tamagotchi.watch_netflix_at_night()
+        elif action == "go_to_shopping":
+            tamagotchi.go_to_shopping()
         elif action == "go_on_date":
             tamagotchi.go_on_date()
+        elif action == "talk_to_friends":
+            tamagotchi.talk_to_friends()
+        elif action == "walk_with_dogs":
+            tamagotchi.walk_with_dogs()
         elif action == "sleep":
             tamagotchi.sleep()
         elif action == "get_married":
@@ -169,8 +242,9 @@ if __name__ == "__main__":
             print("Quitting the game.")
             break
         else:
-            print("Invalid action. Please enter 'feed', 'play', 'play_at_playground', 'play_soccer', 'go_on_date', 'sleep', 'get_married', 'raise_kids', or 'quit'.")
-
+            print("Invalid action. Please enter one of the following options:")
+            print("'feed', 'play', 'play_at_playground', 'play_soccer', 'go_to_school', 'go_to_cafe', 'have_beer', 'watch_netflix_at_night', 'go_to_shopping', 'go_on_date', 'talk_to_friends', 'walk_with_dogs', 'sleep', 'get_married', 'raise_kids', or 'quit'.")
+            
         time.sleep(1)  # simulate the passage of time
 
         tamagotchi.check_status()
