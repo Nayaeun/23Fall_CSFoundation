@@ -1,0 +1,7 @@
+setup.py
+tamagotchi/Tamagochi_main.py
+tamagotchi/__init__.py
+tamagotchi.egg-info/PKG-INFO
+tamagotchi.egg-info/SOURCES.txt
+tamagotchi.egg-info/dependency_links.txt
+tamagotchi.egg-info/top_level.txt
