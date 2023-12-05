@@ -1,5 +1,5 @@
 setup.py
-tamagotchi/Tamagochi_main.py
+tamagotchi/Tamagotchi.py
 tamagotchi/__init__.py
 tamagotchi.egg-info/PKG-INFO
 tamagotchi.egg-info/SOURCES.txt
