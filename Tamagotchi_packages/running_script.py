@@ -8,7 +8,8 @@ if __name__ == "__main__":
     tamagotchi = Tamagotchi(pet_name)
 
     while tamagotchi.is_alive:
-        action = input("What do you want to do? (feed/play/play_at_playground/play_soccer/go_to_school/go_on_date/sleep/get_married/raise_kids/quit): ").lower()
+        
+        action = input("What do you want to do? (feed/play/play_at_playground/play_soccer/go_to_school/go_to_cafe/have_beer/watch_netflix_at_night/go_to_shopping/go_on_date/talk_to_friends/walk_with_dogs/sleep/get_married/raise_kids/quit): ").lower()
 
         if action == "feed":
             tamagotchi.feed()
@@ -20,8 +21,20 @@ if __name__ == "__main__":
             tamagotchi.play_soccer()
         elif action == "go_to_school":
             tamagotchi.go_to_school()
+        elif action == "go_to_cafe":
+            tamagotchi.go_to_cafe()
+        elif action == "have_beer":  
+            tamagotchi.have_beer()
+        elif action == "watch_netflix_at_night":
+            tamagotchi.watch_netflix_at_night()
+        elif action == "go_to_shopping":
+            tamagotchi.go_to_shopping()
         elif action == "go_on_date":
             tamagotchi.go_on_date()
+        elif action == "talk_to_friends":
+            tamagotchi.talk_to_friends()
+        elif action == "walk_with_dogs":
+            tamagotchi.walk_with_dogs()
         elif action == "sleep":
             tamagotchi.sleep()
         elif action == "get_married":
@@ -34,8 +47,9 @@ if __name__ == "__main__":
             print("Quitting the game.")
             break
         else:
-            print("Invalid action. Please enter 'feed', 'play', 'play_at_playground', 'play_soccer', 'go_on_date', 'sleep', 'get_married', 'raise_kids', or 'quit'.")
-
+            print("Invalid action. Please enter one of the following options:")
+            print("'feed', 'play', 'play_at_playground', 'play_soccer', 'go_to_school', 'go_to_cafe', 'have_beer', 'watch_netflix_at_night', 'go_to_shopping', 'go_on_date', 'talk_to_friends', 'walk_with_dogs', 'sleep', 'get_married', 'raise_kids', or 'quit'.")
+            
         time.sleep(1)  # simulate the passage of time
 
         tamagotchi.check_status()

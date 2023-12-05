@@ -62,6 +62,48 @@ class Tamagotchi:
         else:
             print(f"{self.name} is no longer alive. It can't go to school.")
 
+    def go_to_cafe(self):
+        if self.is_alive:
+            print(f"{self.name} is going to the cafe.")
+            self.hunger -= 8
+            self.energy += 10
+            self.happiness += 15
+            self._update_status()
+        else:
+            print(f"{self.name} is no longer alive. You can't go to the cafe with it.")
+
+    def have_beer(self):
+        if self.is_alive:
+            print(f"{self.name} is having beer.")
+
+            # Adjust hunger, energy, and happiness based on having beer
+            self.hunger -= 8
+            self.energy -= 5
+            self.happiness += 15
+
+            self._update_status()
+        else:
+            print(f"{self.name} is no longer alive. It can't have beer.")
+            
+    def go_to_shopping(self):
+        if self.is_alive:
+            print(f"{self.name} is going shopping.")
+            self.hunger += 3
+            self.energy -= 5
+            self.happiness += 10
+            self._update_status()
+        else:
+            print(f"{self.name} is no longer alive. You can't go shopping with it.")
+    
+    def watch_netflix_at_night(self):
+        if self.is_alive:
+            print(f"{self.name} is watching Netflix at night.")
+            self.energy -= 10
+            self.happiness += 15
+            self._update_status()
+        else:
+            print(f"{self.name} is no longer alive. It can't watch Netflix.")
+        
     def go_on_date(self):
             if self.is_alive:
                 print(f"{self.name} is going on a date with their partner.")
@@ -91,6 +133,23 @@ class Tamagotchi:
                 self._update_status()
             else:
                 print(f"{self.name} is no longer alive. You can't go on a date with it.")
+    
+    def talk_to_friends(self):
+        if self.is_alive:
+            print(f"{self.name} is talking to friends.")
+            self.happiness += 10
+            self._update_status()
+        else:
+            print(f"{self.name} is no longer alive. It can't talk to friends.")
+    
+    def walk_with_dogs(self):
+        if self.is_alive:
+            print(f"{self.name} is walking with dogs.")
+            self.happiness += 20
+            self.energy -= 10
+            self._update_status()
+        else:
+            print(f"{self.name} is no longer alive. It can't walk with dogs.")
 
     def sleep(self):
         if self.is_alive:
